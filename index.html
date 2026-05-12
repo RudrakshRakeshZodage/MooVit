@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../favicon.png">
+  <link rel="icon" href="favicon.png">
   <title>Transport Co. - Your Cargo, Our Priority</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,8 +51,8 @@
       </nav>
       <div class="header-actions">
         <div class="search-bar-mini">
-          <input type="text" placeholder="Track ID...">
-          <button><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <input type="text" id="header-tracking-id" placeholder="Track ID...">
+          <button id="header-track-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg></button>
@@ -72,73 +72,102 @@
     </div>
   </header>
 
-  <main class="hero loading">
-    <h2>Your Cargo, Our Priority</h2>
-    <p>Seamless and reliable global shipping solutions, tailored for your business. Fast, secure, and always on time.
-    </p>
-    <div class="hero-actions">
-      <a href="#" class="btn-hero" onclick="openSignupPopup()">Get Started Today</a>
-      <div class="tracking-wrapper">
-        <input type="text" placeholder="Enter Tracking ID...">
-        <button>Track Parcel</button>
+  <main class="hero">
+    <div class="hero-content loading">
+      <div class="hero-badge">Next-Gen Logistics</div>
+      <h1 class="hero-title">Delivering the Future <br><span>of Global Transport</span></h1>
+      <p class="hero-description">Streamline your supply chain with our AI-driven logistics platform. From local delivery to global freight, we move your business forward.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-hero" onclick="openSignupPopup()">Get Started Now</a>
+        <div class="tracking-wrapper">
+          <div class="tracking-input-container">
+            <svg class="tracking-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="hero-tracking-id" placeholder="Enter Tracking Number...">
+          </div>
+          <button id="hero-track-btn">Track</button>
+        </div>
       </div>
-    </div>
-    <div class="hero-brands">
-      <p>Trusted by leading brands</p>
-      <div class="brand-logos">
-        <span>GlobalCorp</span><span>❖ TransNet</span><span>Apex Logistics</span><span>Horizon Freight</span>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value">50k+</span>
+          <span class="stat-label">Deliveries</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">99%</span>
+          <span class="stat-label">On Time</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">120+</span>
+          <span class="stat-label">Countries</span>
+        </div>
       </div>
     </div>
   </main>
 
   <section class="services-section loading">
-    <h2 class="services-title">Our Premium Services</h2>
+    <div class="section-header">
+      <h2 class="services-title">Our Premium Services</h2>
+      <p class="services-subtitle">Industry-leading logistics solutions powered by advanced technology and a global network.</p>
+    </div>
     <div class="grid-container">
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">🚛</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
           <h2>Ground Transport</h2>
-          <p>Reliable trucking services with real-time GPS tracking, temperature-controlled options, and 24/7
-            monitoring.</p>
+          <p>Reliable trucking services with real-time GPS tracking, temperature-controlled options, and 24/7 monitoring.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">✈️</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.7.5-1.1z"></path></svg>
+          </div>
           <h2>Air Freight</h2>
-          <p>Lightning-fast international shipping with priority handling and expedited customs clearance for urgent
-            deliveries.</p>
+          <p>Lightning-fast international shipping with priority handling and expedited customs clearance for urgent deliveries.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">🚢</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"></path><path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.2.6 4.3 1.62 6"></path><path d="M12 3v7"></path><path d="M12 10L8.43 4.15"></path><path d="M12 10l3.57-5.85"></path></svg>
+          </div>
           <h2>Ocean Freight</h2>
-          <p>Cost-effective sea transport for large shipments with comprehensive insurance and port-to-port excellence.
-          </p>
+          <p>Cost-effective sea transport for large shipments with comprehensive insurance and port-to-port excellence.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">📦</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+          </div>
           <h2>Warehousing</h2>
-          <p>State-of-the-art storage facilities with advanced inventory management and automated distribution systems.
-          </p>
+          <p>State-of-the-art storage facilities with advanced inventory management and automated distribution systems.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">🛡️</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
           <h2>Secure Logistics</h2>
           <p>High-security transport for valuable goods with GPS monitoring and specialized handling protocols.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
       <div class="card" onclick="handleServiceClick()">
         <div class="card-content">
-          <div class="icon">⚡</div>
+          <div class="icon-wrapper">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+          </div>
           <h2>Express Delivery</h2>
-          <p>Same-day and next-day delivery services with live tracking and money-back guarantee for time-critical
-            shipments.</p>
+          <p>Same-day and next-day delivery services with live tracking and money-back guarantee for time-critical shipments.</p>
+          <span class="card-more">Learn More <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
         </div>
       </div>
     </div>
@@ -523,7 +552,7 @@
         const submitBtn = this.querySelector('.login-submit-btn');
         submitBtn.textContent = 'Logging in...';
         submitBtn.disabled = true;
-        setTimeout(() => { window.location.href = '#'; }, 1000);
+        setTimeout(() => { window.location.href = 'main.html'; }, 1000);
       });
     }
 
@@ -555,8 +584,9 @@
         setTimeout(() => {
           closeAllModals();
           openLoginPopup();
-          document.getElementById('popup-error-msg').style.color = '#10b981';
-          document.getElementById('popup-error-msg').textContent = 'Account created!';
+          const loginErrorMsg = document.getElementById('popup-error-msg');
+          loginErrorMsg.style.color = '#10b981';
+          loginErrorMsg.textContent = 'Account created successfully! Please login.';
         }, 1500);
       });
     }
@@ -574,12 +604,48 @@
           const submitBtn = this.querySelector('.admin-submit-btn');
           submitBtn.textContent = 'Accessing...';
           submitBtn.disabled = true;
-          setTimeout(() => { alert('Access Granted'); closeAllModals(); }, 1000);
+          setTimeout(() => { window.location.href = 'admin-dashboard.html'; }, 1000);
         } else {
           errorMsg.textContent = 'Invalid Admin credentials.';
         }
       });
     }
+
+    // Tracking Simulation
+    const trackBtn = document.getElementById('hero-track-btn');
+    const headerTrackBtn = document.getElementById('header-track-btn');
+
+    function performTracking(id) {
+      if (!id) {
+        alert('Please enter a Tracking ID.');
+        return;
+      }
+      alert(`Tracking System: Fetching status for ${id}...\nStatus: In Transit\nLast Location: Mumbai Hub\nEstimated Delivery: Tomorrow`);
+    }
+
+    if (trackBtn) {
+      trackBtn.addEventListener('click', () => {
+        performTracking(document.getElementById('hero-tracking-id').value.trim());
+      });
+    }
+
+    if (headerTrackBtn) {
+      headerTrackBtn.addEventListener('click', () => {
+        performTracking(document.getElementById('header-tracking-id').value.trim());
+      });
+    }
+
+    // Card Spotlight Effect
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
 
     // Loading
     window.addEventListener('load', () => {
